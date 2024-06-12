@@ -53,7 +53,7 @@
                                     class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
                                     {% if childlink.current %}
                                       aria-current="page"
-                                    {% if %}
+                                    {% endif %}
                                   >
                                     {{ childlink.title | escape }}
                                   </a>
@@ -108,16 +108,7 @@
                       </div>
                     </details>
                   {%- else -%}
-                    <a
-                      id="HeaderDrawer-{{ link.handle }}"
-                      href="{{ .url }}"
-                      class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
-                      {% link.current %}
-                        aria-current="page"
-                      {% endif %}
-                    >
-                      {{ link.title | escape }}
-                    </a>
+                 
                   {%- endif -%}
                 </li>
               {%- endfor -%}
