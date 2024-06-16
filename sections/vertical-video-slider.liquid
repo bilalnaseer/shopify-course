@@ -42,6 +42,7 @@
   }
 {%- endstyle -%}
 
+{{ 'section-testimonials.css' | asset_url | stylesheet_tag }}
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 
 <div class="video-slider section--padding{% if section.settings.show_divider %} section--divider{% endif %}">
@@ -64,6 +65,7 @@
               <div class="testimonial__item{% if section.blocks.first == true or block_count == 1 %} is-selected{% endif %}" {{ block.shopify_attributes }}>
                 <div class="testimonial__image media-wrapper media-wrapper--small">
                   {%- if block.settings.video != blank -%}
+                      <!-- <video src="https://cdn.shopify.com/videos/c/o/v/176c5f40b3cb49d7b72a5dfaa681345b.mp4" muted  playsinline autoplay loop></video> -->
                         {{ block.settings.video | video_tag:
                           image_size: "3840px",
                           autoplay: true,
@@ -72,6 +74,9 @@
                           muted: true,
                           playsinline: true
                         }}
+                      <!-- <video autoplay="autoplay" loop="loop" muted playsinline>
+                        <source src="{{ block.settings.video }}" type="video/mp4">
+                      </video>  -->
                   {%- else -%}
                     <div class="media media--square">
                       {{ 'image' | placeholder_svg_tag: 'placeholder' }}
@@ -82,6 +87,33 @@
             {%- endfor -%}
           </div>
         </div>
+      {% comment %}
+         <div class="testimonial__previews">
+          {%- for block in section.blocks -%}
+            <div class="testimonial__preview">
+              <blockquote class="testimonial__blockquote">
+                {%- if block.settings.icon != 'none' -%}
+                  {%- if block.settings.icon == 'quote' -%}
+                    <div class="quote-icon"><svg aria-hidden="true" focusable="false" class="icon icon-quote" viewBox="0 0 41 35"><path d="M10.208 17.711h6.124v16.332H0V21.684C0 8.184 5.444.956 16.332 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766zm24.498 0h6.124v16.332H24.498V21.684C24.498 8.184 29.942.956 40.83 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766z" fill="currentColor" fill-rule="evenodd"/></svg></div>
+                  {%- else -%}
+                    <div class="rating" role="img">
+                      <span aria-hidden="true" class="rating-star" style="--rating: {{ block.settings.icon }};--rating-max: 5;--rating-decimal: 0;"></span>
+                    </div>
+                  {%- endif -%}
+                {%- endif -%}
+
+                {%- if block.settings.text != blank -%}
+                  <div class="rte typeset2">{{ block.settings.text }}</div>
+                {%- endif -%}
+
+                {%- if block.settings.author != blank -%}
+                  <cite class="testimonial__author">{{ block.settings.author | escape }}</cite>
+                {%- endif -%}
+              </blockquote>
+            </div>
+          {%- endfor -%}
+        </div>
+      {% endcomment %}
       </testimonials-component>
     {%- endif -%}
   </div>
