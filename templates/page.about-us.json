@@ -21,26 +21,18 @@
       "blocks": {
         "column_XiEyah": {
           "type": "column",
+          "repeater": "{{ page.metafields.custom.meet_the_team.value }}",
           "settings": {
-            "title": "Name",
-            "text": "{{ page.metafields.custom.meet_the_team | metafield_tag: field: 'name' }}",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_m9gr3G": {
-          "type": "column",
-          "settings": {
-            "title": "Phone",
-            "text": "{{ page.metafields.custom.meet_the_team | metafield_tag: field: 'phone' }}",
+            "image": "{{ block.repeater.photo.value }}",
+            "title": "{{ block.repeater.name.value }}",
+            "text": "<p>{{ block.repeater.phone.value }}<\/p>",
             "link_label": "",
             "link": ""
           }
         }
       },
       "block_order": [
-        "column_XiEyah",
-        "column_m9gr3G"
+        "column_XiEyah"
       ],
       "settings": {
         "title": "Team Members",
