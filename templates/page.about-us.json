@@ -16,37 +16,37 @@
         "padding_bottom": 28
       }
     },
-    "multicolumn_NrUbTJ": {
-      "type": "multicolumn",
+    "multirow_heWYAR": {
+      "type": "multirow",
       "blocks": {
-        "column_XiEyah": {
-          "type": "column",
+        "row_kJTter": {
+          "type": "row",
           "repeater": "{{ page.metafields.custom.meet_the_team.value }}",
           "settings": {
             "image": "{{ block.repeater.photo.value }}",
-            "title": "{{ block.repeater.name.value }}",
-            "text": "<p>{{ block.repeater.phone.value }}<\/p>",
-            "link_label": "",
-            "link": ""
+            "caption": "{{ block.repeater.name.value }}",
+            "heading": "{{ block.repeater.phone.value }}",
+            "text": "<p>{{ block.repeater.bio | metafield_tag }}<\/p>",
+            "button_label": "Button label",
+            "button_link": ""
           }
         }
       },
       "block_order": [
-        "column_XiEyah"
+        "row_kJTter"
       ],
       "settings": {
-        "title": "Team Members",
+        "image_height": "medium",
+        "desktop_image_width": "medium",
         "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -54,6 +54,6 @@
   },
   "order": [
     "main",
-    "multicolumn_NrUbTJ"
+    "multirow_heWYAR"
   ]
 }
