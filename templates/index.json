@@ -9,28 +9,6 @@
 */
 {
   "sections": {
-    "1723292220535d8336": {
-      "type": "apps",
-      "blocks": {
-        "clicky_clickable_banner_HnH7AN": {
-          "type": "shopify:\/\/apps\/clicky\/blocks\/clickable_banner\/2d58f9d3-a5fb-4893-8aac-935f0ebcc5b8",
-          "settings": {
-            "cb_desktop_image": "shopify:\/\/shop_images\/pexels-pixabay-208321.jpg",
-            "cb_mobile_image": "shopify:\/\/shop_images\/output-onlinepngtools.png",
-            "image_size": "adapt",
-            "cb_image_link": "shopify:\/\/products\/albany-united-nike-drill-top-mens",
-            "cb_is_boxed_layout": false,
-            "cb_custom_css": ""
-          }
-        }
-      },
-      "block_order": [
-        "clicky_clickable_banner_HnH7AN"
-      ],
-      "settings": {
-        "include_margins": true
-      }
-    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -65,7 +43,6 @@
         "text",
         "button"
       ],
-      "disabled": true,
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
@@ -245,7 +222,6 @@
     }
   },
   "order": [
-    "1723292220535d8336",
     "image_banner",
     "rich_text",
     "featured_collection",
